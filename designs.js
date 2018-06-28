@@ -11,6 +11,7 @@ $("#sizePicker").submit(function (event) {
 
 // Creating table rows and table data
 function makeGrid(height, width) {
+// remove current grid if one exists
     $("tr").remove();
 for (var i = 1; i <= height; i++) {
        $("#pixelCanvas").append("<tr></tr>");
