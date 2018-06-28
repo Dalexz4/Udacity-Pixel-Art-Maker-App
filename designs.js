@@ -1,5 +1,5 @@
 // Select size input
-var height, width, color;
+var height, width, paint;
 // When size is submitted by the user, call makeGrid()
 $("#sizePicker").submit(function (event) {
     event.preventDefault();
@@ -20,16 +20,20 @@ for (var i = 1; i <= height; i++) {
              $('td').attr("class", 'color');
            }
 }
-
- // Selecting color input
-// Adding color to table data
-// When table data is clicked by a user, change color of table data
-
-$('.color').click(function(event){
-        var paint = $('#colorPicker').val();
-        $(event.target).css('background-color', paint);
-    });
-
+    
+// Function to Paint td with color and also remove color
+// Adding and removing color to table data
+// When table data is clicked by a user, add background color or revert change to table data
+    
+$('td').click(function (event){
+    var paint = $('#colorPicker').val();
+    if($(this).attr('style')){
+      $(this).removeAttr('style');
+    }
+    else {
+      $(this).attr('style', 'background-color:' + paint);
+    };
+  });
 }
 
 
