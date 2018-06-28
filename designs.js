@@ -1,4 +1,3 @@
-// Select color input
 // Select size input
 var height, width, color;
 // When size is submitted by the user, call makeGrid()
@@ -9,6 +8,7 @@ $("#sizePicker").submit(function (event) {
     makeGrid(height, width);
 
 });
+
 // Creating table rows and table data
 function makeGrid(height, width) {
     $("tr").remove();
@@ -20,8 +20,9 @@ for (var i = 1; i <= height; i++) {
            }
 }
 
+ // Selecting color input
 // Adding color to table data
-// When td is clicked by the user, change color of td
+// When table data is clicked by a user, change color of table data
 
 $('.color').click(function(event){
         var paint = $('#colorPicker').val();
